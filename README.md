@@ -7,8 +7,9 @@ A place where some of my less useful Lua modules live.
   For more info on uuencoding: [Wikipedia](https://en.wikipedia.org/wiki/Uuencoding)
   
   ### Features
+  - [x] Encode/Decode strings and files to and from UUEncoded format.
   - [x] ~~Efficient.~~ Simple.
-  - [x] Easy-to-use.
+  - [x] Easy-to-Use.
   - [ ] Fix all of your code issues.
   
   ### Usage
@@ -20,6 +21,12 @@ A place where some of my less useful Lua modules live.
 
   -- Decode a string
   local decoded_string = uu.dec(encoded_string)
+
+  -- Encode a file
+  local encoded_file = uu.encFile("_test_file.txt", "644")
+
+  -- Decode files from a encoded file string.
+  local file_count, decoded_files = uu.decFile("begin 644 _test_file.txt\n! Encoded Data !\n`\nend")
   ```
   Links: [UUEncoding.lua][lib_uuencoding] - [Example.lua][example_uuencoding] - [Test.lua][test_uuencoding]
   
